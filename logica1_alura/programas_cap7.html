@@ -1,0 +1,206 @@
+<!-- aula3 -->
+
+<!-- <meta charset="UTF-8">
+<script>
+    function pulaLinha(){
+        document.write('<br>');
+    }
+
+    function mostraTexto(texto){
+        document.write(texto);
+        pulaLinha();
+    }
+
+    let contador = 0;
+
+    while(contador < 100){
+        contador = contador + 2;
+        mostraTexto(contador);
+    }
+
+    mostraTexto('FIM')
+   
+</script> -->
+
+
+
+<!-- aula4 -->
+
+<!-- <meta charset="UTF-8">
+<script>
+    function pulaLinha(){
+        document.write('<br>');
+    }
+
+    function mostraTexto(texto){
+        document.write(texto);
+        pulaLinha();
+    }
+
+    let contador = 30;
+
+    while(contador <= 40){
+        if(contador == 33){
+            contador = contador + 1;
+        } 
+        
+        if(contador == 37){
+            contador = contador + 1;
+        }
+
+        mostraTexto(contador)
+        contador = contador + 1;
+    }
+
+    mostraTexto('FIM')
+   
+</script>  -->
+
+
+<!-- aula5 -->
+
+<!-- <meta charset="UTF-8">
+<script>
+    function pulaLinha(){
+        document.write('<br>');
+    }
+
+    function mostraTexto(texto){
+        document.write(texto);
+        pulaLinha();
+    }
+
+    let contador = 20;
+
+    while(contador >= 0){
+        mostraTexto(contador)
+        contador = contador - 1;
+    }
+
+    mostraTexto('FIM')
+   
+</script>  -->
+
+
+
+<!-- aula6 -->
+
+
+<!-- <meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var anoCopa = 1930;
+    var limite = parseInt(prompt("Qual é o ano limite?"));
+
+    while(anoCopa <= limite) {
+
+        mostra(anoCopa + " tem copa!");
+
+        anoCopa = anoCopa + 4;
+    }
+
+    
+
+    mostra("Ufa! Esses foram os anos de copa até " + limite);
+</script> -->
+
+
+
+
+<!-- aula7 -->
+<!-- <meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    const limite = 3;
+    let contador = 1;
+
+    
+    let nomeDeUsuario = "coxinha";
+    let senha = 1234;
+    
+
+    while(contador <= limite) {
+
+        let login = prompt("Digite seu nome de usuário");
+        let senhaDigitada = parseInt(prompt("Digite sua senha"));
+
+        if (login == nomeDeUsuario && senhaDigitada == senha){
+                
+                mostra('Usuário logado!');
+                contador = 3;
+           
+        } else {
+            if(contador == 3){
+                mostra("Você excedeu o número de tentativas que são " + limite);
+            }
+        }
+
+        
+        contador = contador + 1;
+    }
+
+</script> -->
+
+
+
+
+<!-- aula11 -->
+<!-- <meta charset="UTF-8">
+
+<script>
+
+    let i = 0;
+
+    while(i < 10){
+        alert ('O resultado é ' + (2*i));
+        i++;
+    }
+
+</script> -->
+
+
+
+<!-- aula12 -->
+<meta charset="UTF-8">
+
+<script>
+
+    let quantidadeDePessoas = parseInt(prompt('Digite a quantidade de pessoas que você deseja:'));
+
+    let contador = 1
+
+    let soma = 0
+
+    while(contador <= quantidadeDePessoas){
+        let idade = parseInt(prompt("Digite a idade da pessoa " + contador));
+
+        soma = soma + idade;
+
+        contador++;
+    }
+
+document.write(soma/quantidadeDePessoas)
+
+</script>

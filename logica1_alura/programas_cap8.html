@@ -1,0 +1,45 @@
+<!-- aula3 -->
+<!-- <meta charset="UTF-8">
+
+<button>Clique</button>
+
+<script>
+
+    function alerta(){
+        alert('Eu sou um alerta!')
+    }
+
+    let botao = document.querySelector('button');
+
+    botao.onclick = alerta
+   
+
+</script> -->
+
+
+
+
+<!-- aula4 -->
+<meta charset="UTF-8">
+
+<input />
+<button>Clique</button>
+
+<script>
+
+    let textoDigitado = document.querySelector('input');
+
+    textoDigitado.focus();
+
+    function revelarTextoDigitado(){
+        alert(textoDigitado.value);
+
+        textoDigitado.value = '';
+        textoDigitado.focus();
+    }
+
+    let botao = document.querySelector('button');
+
+    botao.onclick = revelarTextoDigitado;
+
+</script>
