@@ -1,0 +1,172 @@
+<!--Aula 2 - criando a tela-->
+<!-- 
+<canvas width = '600' height = '400'></canvas>
+
+<script>
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+
+    pincel.fillStyle = '#ee0290';
+    pincel.fillRect(0,0,100,100);
+    //cria uma borda de cor black(default) em torno do quadrado
+    pincel.strokeRect(0,0,100,100);
+
+</script> -->
+
+
+
+<!--Aula 3 - Uma função genérica-->
+
+<!-- <canvas width='600' height='400'></canvas>
+
+<script>
+
+    function desenhaQuadrado(x, y, cor) {
+        let tela = document.querySelector('canvas');
+        let pincel = tela.getContext('2d');
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, 100, 100);
+        //cria uma borda de cor black(default) em torno do quadrado
+        pincel.strokeRect(x, y, 100, 100);
+    }
+
+    desenhaQuadrado(0,0, '#e44304');
+    desenhaQuadrado(100,0,'#e44304')
+
+</script> -->
+
+
+<!--Aula 5 - loop - while-->
+
+<!-- <canvas width='600' height='400'></canvas>
+
+<script>
+
+    function desenhaQuadrado(x, y, cor) {
+        let tela = document.querySelector('canvas');
+        let pincel = tela.getContext('2d');
+        pincel.strokeRect(0, 0, 600, 400);
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, 100, 100);
+        //cria uma borda de cor black(default) em torno do quadrado
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(x, y, 100, 100);
+    }
+
+    let contador = 0;
+
+    while(contador < 600){
+        desenhaQuadrado(contador, 0, '#e44304');
+        contador = contador + 100;
+    }
+
+</script> -->
+
+
+<!-- loop com for -->
+<!-- <canvas width='600' height='400'></canvas>
+
+<script>
+
+    function desenhaQuadrado(x, y, cor) {
+        let tela = document.querySelector('canvas');
+        let pincel = tela.getContext('2d');
+        pincel.strokeRect(0, 0, 600, 400);
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, 100, 100);
+        //cria uma borda de cor black(default) em torno do quadrado
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(x, y, 100, 100);
+    }
+
+
+    for(let contador = 0; contador < 600; contador = contador + 100){
+        desenhaQuadrado(contador, 0, '#e44304');
+    }
+
+</script> -->
+
+
+<!-- Aula8 - flor -->
+
+<!-- <canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2*3.14);
+        pincel.fill();
+    }
+
+    desenhaCirculo(300, 200, 20, '#eee402');
+    desenhaCirculo(260, 200, 20, 'red');
+    desenhaCirculo(300, 240, 20, 'red');
+    desenhaCirculo(340, 200, 20, 'red');
+    desenhaCirculo(300, 160, 20, 'red');
+
+</script> -->
+
+
+<!-- Aula9 - frações
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaQuadrado(x, y, tamanho, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, tamanho, tamanho);
+        pincel.strokeRect(x, y, tamanho, tamanho);
+    }
+
+    for (let x = 0; x < 270; x = x + 90) {
+        desenhaQuadrado(x, 0, 90, '#021aee');
+    }
+
+    desenhaQuadrado(270, 0, 90, '#eee6ff')
+
+</script> -->
+
+
+<!-- Aula10 - gráfico -->
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaQuadrado(x, y, tamanho, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, tamanho, tamanho);
+        pincel.strokeRect(x, y, tamanho, tamanho);
+    }
+
+    for (let x = 0; x < 270; x = x + 90) {
+        desenhaQuadrado(x, 0, 90, '#021aee');
+    }
+
+    desenhaQuadrado(270, 0, 90, '#eee6ff')
+
+</script>
