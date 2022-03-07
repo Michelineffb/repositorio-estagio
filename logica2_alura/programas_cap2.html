@@ -147,26 +147,55 @@
 
 <!-- Aula10 - gráfico -->
 
-<canvas width="600" height="400"></canvas>
+<canvas width='600' height='400'></canvas>
 
 <script>
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
 
-    var tela = document.querySelector('canvas');
-    var pincel = tela.getContext('2d');
-    pincel.fillStyle = 'lightgray';
-    pincel.fillRect(0, 0, 600, 400);
-
-    function desenhaQuadrado(x, y, tamanho, cor) {
+    function desenhaQuadrado(x, y, largura, altura, cor) {
 
         pincel.fillStyle = cor;
-        pincel.fillRect(x, y, tamanho, tamanho);
-        pincel.strokeRect(x, y, tamanho, tamanho);
+        pincel.fillRect(x, y, largura, altura);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(x, y, largura, altura);
+
     }
 
-    for (let x = 0; x < 270; x = x + 90) {
-        desenhaQuadrado(x, 0, 90, '#021aee');
+    function desenhaTexto(x, y, texto) {
+
+        pincel.font = '15px Georgia';
+        pincel.fillStyle = 'black';
+        pincel.fillText(texto, x, y);
+
     }
 
-    desenhaQuadrado(270, 0, 90, '#eee6ff')
+    let cores = ['blue', 'green', 'yellow', 'red'];
+    let serie2015 = [50, 25, 20, 5];
+    let serie2016 = [65, 20, 13, 2];
+
+
+
+    function desenhaBarra(x, y, serie, cores, texto) {
+
+        desenhaTexto(x, y - 10, texto);
+
+        let somaAltura = 0;
+
+        let largura = 60;
+
+
+        for (let i = 0; i < serie.length; i++) {
+            let altura = serie[i];
+            let cor = cores[i];
+            desenhaQuadrado(x, y + somaAltura, largura, altura, cor);
+            somaAltura = somaAltura + altura;
+
+        }
+
+    }
+
+    desenhaBarra(50, 50, serie2015, cores, '2015')
+    desenhaBarra(150, 50, serie2016, cores, '2016')
 
 </script>
