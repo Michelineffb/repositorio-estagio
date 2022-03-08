@@ -178,7 +178,15 @@
         pincel.fill();
 
         if (event.shiftKey) {
-            raioAtual = raioAtual + 10;
+            if(raioAtual>9 && raioAtual<40){
+                raioAtual = raioAtual + 10;
+            }  
+        }
+
+        if(event.altKey){
+            if(raioAtual>10){
+                raioAtual = raioAtual - 5;
+            }
         }
     }
 
