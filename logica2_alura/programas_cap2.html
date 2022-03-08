@@ -147,7 +147,7 @@
 
 <!-- Aula10 - gráfico -->
 
-<canvas width='600' height='400'></canvas>
+<!-- <canvas width='600' height='400'></canvas>
 
 <script>
     let tela = document.querySelector('canvas');
@@ -197,5 +197,34 @@
 
     desenhaBarra(50, 50, serie2015, cores, '2015')
     desenhaBarra(150, 50, serie2016, cores, '2016')
+
+</script> -->
+
+
+
+<!-- Aula 11 -->
+<canvas width = '600' height = '400'></canvas>
+
+<script>
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+
+    function desenhaEsquadro(a, b, c, d, cor){
+        pincel.fillStyle = cor
+        pincel.beginPath();
+        pincel.moveTo(a,b)
+        pincel.lineTo(a,d);
+        pincel.lineTo(c,d)
+        pincel.fill();
+    }
+
+    //para calcular distância de Yinicial a Yfinal faça 2xd+d/2, onde d é a distância que se quer entre os triângulos
+    desenhaEsquadro(50, 50, 400, 400, '#c6006e')
+    //d=50
+    desenhaEsquadro(90, 150, 300, 360, '#61d800')
+    //d=20
+    desenhaEsquadro(110, 200, 250, 340, '#021aee')
+    //d=20
+    desenhaEsquadro(130, 250, 200, 320, '#e44304')
 
 </script>
