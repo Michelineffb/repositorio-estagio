@@ -1,0 +1,96 @@
+<!-- Aula 01 -->
+
+<!-- <canvas width = '600' height = '400'></canvas>
+
+<script>
+
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+
+    pincel.fillStyle = '#00ba68'
+    pincel.fillRect(0,0, 600, 400)
+
+    function clique(){
+        alert('clicou');
+    } 
+
+    tela.onclick = clique;
+
+</script> -->
+
+
+
+<!-- Aula 02 -->
+
+<!-- <canvas width = '600' height = '400'></canvas>
+
+<script>
+
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+
+    pincel.fillStyle = '#00ba68'
+    pincel.fillRect(0,0, 600, 400)
+
+    function clique(event){
+
+        let x = event.pageX - tela.offsetLeft;
+        let y = event.pageY - tela.offsetTop;
+
+        pincel.fillStyle = '#ee6002';
+        pincel.beginPath();
+        pincel.arc(x, y, 15, 0, 2*3.14);
+        pincel.fill();
+
+        // alert(x + ',' + y);
+    } 
+
+    tela.onclick = clique;
+
+</script> -->
+
+
+
+<!-- Aula 04 -->
+
+<canvas width = '600' height = '400'></canvas>
+
+<script>
+
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+
+    pincel.fillStyle = '#00ba68'
+    pincel.fillRect(0,0, 600, 400)
+
+    let cores = ['#ee6002', '#aaf255', '#e44304', '#c6006e', '#9965f4','#fb2109', '#ee4fa6', '#021aee'];
+    let corAtual = 0;
+
+    function clique(event){
+
+        let x = event.pageX - tela.offsetLeft;
+        let y = event.pageY - tela.offsetTop;
+
+        pincel.fillStyle = cores[corAtual];
+        pincel.beginPath();
+        pincel.arc(x, y, 15, 0, 2*3.14);
+        pincel.fill();
+
+        // alert(x + ',' + y);
+    } 
+
+    function mudaCor(){
+        corAtual++;
+
+        if(corAtual >= cores.length){
+            corAtual = 0;
+        }
+
+        return false;
+    }
+
+    tela.oncontextmenu = mudaCor;
+
+    tela.onclick = clique;
+
+</script>
