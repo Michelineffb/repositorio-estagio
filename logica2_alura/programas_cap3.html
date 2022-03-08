@@ -149,9 +149,9 @@
 
 
 
-<!-- Aula 06 -->
+<!-- Aula 06 e 7 -->
 
-<canvas width='600' height='400'></canvas>
+<!-- <canvas width='600' height='400'></canvas>
 
 <script>
 
@@ -187,6 +187,62 @@
             if(raioAtual>10){
                 raioAtual = raioAtual - 5;
             }
+        }
+    }
+
+    function mudaCor() {
+        corAtual++;
+
+        if (corAtual >= cores.length) {
+            corAtual = 0;
+        }
+
+        return false;
+    }
+
+    tela.oncontextmenu = mudaCor;
+
+    tela.onclick = clique;
+
+</script> -->
+
+
+<!-- Aula 07 - resolução professor -->
+
+<canvas width='600' height='400'></canvas>
+
+<script>
+
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+
+    pincel.fillStyle = '#00ba68'
+    pincel.fillRect(0, 0, 600, 400)
+
+    let cores = ['#ee6002', '#aaf255', '#e44304', '#c6006e', '#9965f4', '#fb2109', '#ee4fa6', '#021aee'];
+    let corAtual = 0;
+
+    let raioAtual = 10;
+
+    function clique(event) {
+
+        let x = event.pageX - tela.offsetLeft;
+        let y = event.pageY - tela.offsetTop;
+
+        pincel.fillStyle = cores[corAtual];
+
+        pincel.beginPath();
+        pincel.arc(x, y, raioAtual, 0, 2 * 3.14);
+        pincel.fill();
+
+        if (event.shiftKey && event.altKey) {
+            alert('Atenção! Pressione um por vez.')
+        } else if (event.shiftKey && raioAtual < 40) {
+            raioAtual = raioAtual + 10;
+        } else if (event.altKey && raioAtual > 10) {
+
+            raioAtual = raioAtual - 5;
+
         }
     }
 
