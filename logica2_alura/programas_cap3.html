@@ -209,7 +209,7 @@
 
 <!-- Aula 07 - resolução professor -->
 
-<canvas width='600' height='400'></canvas>
+<!-- <canvas width='600' height='400'></canvas>
 
 <script>
 
@@ -259,5 +259,136 @@
     tela.oncontextmenu = mudaCor;
 
     tela.onclick = clique;
+
+</script> -->
+
+
+
+<!-- Aula 08 - resolução professor
+
+<canvas width='600' height='400'></canvas>
+
+<script>
+
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+
+    pincel.fillStyle = '#00ba68'
+    pincel.fillRect(0, 0, 600, 400);
+
+    let clicando = false;
+
+    function desenha(event) {
+
+        if(clicando){
+            let x = event.pageX - tela.offsetLeft;
+            let y = event.pageY - tela.offsetTop;
+        
+            pincel.fillStyle = '#9965f4';
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();  
+        }
+     
+    }
+
+    function habilitarDesenha(){
+        clicando = true;
+    }
+
+    function desabilitarDesenha(){
+        clicando = false;
+    }
+
+    tela.onmousemove = desenha;
+
+    tela.onmousedown = habilitarDesenha;
+
+    tela.onmouseup = desabilitarDesenha;
+
+</script> -->
+
+
+<!-- Aula 08 - resolução professor -->
+
+<!-- <canvas width='600' height='400'></canvas>
+
+<script>
+
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+
+    pincel.fillStyle = '#00ba68'
+    pincel.fillRect(0, 0, 600, 400);
+
+    let clicando = false;
+
+    function desenha(event) {
+
+        if(clicando){
+            let x = event.pageX - tela.offsetLeft;
+            let y = event.pageY - tela.offsetTop;
+        
+            pincel.fillStyle = '#9965f4';
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();  
+        }
+     
+    }
+
+    tela.onmousemove = desenha;
+
+    tela.onmousedown = function(){
+        clicando = true;
+    }
+
+    tela.onmouseup = function(){
+        clicando = false;
+    }
+
+</script> -->
+
+
+
+<!-- aula9 -->
+
+<canvas width="600" height="400"></canvas>
+<br>
+Escolha uma cor <input type="color">
+
+<script>
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    let desenha = false;
+
+    let input = document.querySelector('input');
+
+    tela.onmousemove = function(event) {
+
+        if (desenha) {
+            let x = event.pageX - tela.offsetLeft;
+            let y = event.pageY - tela.offsetTop;
+            pincel.fillStyle = input.value;
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+
+    tela.onmousedown = function () {
+
+        desenha = true;
+    }
+
+    tela.onmouseup = function () {
+
+        desenha = false;
+    }
 
 </script>
