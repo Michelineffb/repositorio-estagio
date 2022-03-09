@@ -1,0 +1,226 @@
+<!-- Aula 3 -->
+<!--Desenhando uma linha-->
+<!-- <canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+
+    }
+
+    let x = 0;
+
+    function atualizaDesenhaCírcilo(){
+
+        desenhaCirculo(x, 20, 10);
+        x++;
+    }
+
+    setInterval(atualizaDesenhaCírcilo, 20)
+
+</script> -->
+
+
+<!--Movimentando a bola-->
+
+<!-- <canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 300, 400);
+
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400);
+
+    }
+
+    let x = 0;
+    let indo = true;
+
+    function atualizaDesenhaCírcilo() {
+        if (indo) {
+            limpaTela();
+            desenhaCirculo(x, 20, 10);
+            x++;
+        } else {
+            limpaTela();
+            desenhaCirculo(x, 20, 10);
+            x--;
+        }
+
+        if (x == 300) {
+            indo = false
+        }
+
+        if (x == 0) {
+            indo = true;
+        }
+
+    }
+
+    setInterval(atualizaDesenhaCírcilo, 0.01)
+
+</script> -->
+
+
+
+<!-- aula 7 -->
+
+<!-- <canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400);
+
+    }
+
+    let raio = 20;
+
+    //minha solução
+    // let aumenta = true;
+
+    let fatorAumento = 0;
+
+    function pulsar() {
+        //{minha solução
+        // if (aumenta) {
+
+        //     limpaTela();
+        //     desenhaCirculo(300, 200, raio, '#c6006e');
+        //     raio++;
+
+        // } else{
+        //     limpaTela();
+        //     desenhaCirculo(300, 200, raio, '#c6006e');
+        //     raio--;
+        // }
+
+        // if (raio <= 20) {
+        //     aumenta = true;
+        // }
+
+        // if (raio >= 30) {
+        //     aumenta = false
+        // }}
+
+        limpaTela();
+
+        if (raio > 30) {
+            fatorAumento = -1;
+        } else if (raio <= 20) {
+            fatorAumento = 1;
+        }
+
+        raio = raio + fatorAumento;
+
+        desenhaCirculo(300, 200, raio, '#c6776e');
+
+    }
+
+    setInterval(pulsar, 20)
+
+</script> -->
+
+
+<!-- aula 08 -->
+<!-- <canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x = 20;
+    var y = 20;
+
+    // códigos do teclado
+
+    var esquerda = 37;
+    var cima = 38;
+    var direita = 39;
+    var baixo = 40;
+
+    // taxa de incremento
+    var taxa = 10;
+
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    function atualizaTela() {
+
+        limpaTela();
+        desenhaCirculo(x, y, 10);
+    }
+
+    setInterval(atualizaTela, 20);
+
+    function leDoTeclado(event) {
+
+        // sua lógica virá aqui
+        if (event.keyCode == esquerda) {
+            x = x - taxa;
+        } else if (event.keyCode == direita) {
+            x = x + taxa;
+        } else if (event.keyCode == cima) {
+            y = y - taxa;
+        } else if (event.keyCode == baixo) {
+            y = y + taxa;
+        }
+
+
+    }
+
+    document.onkeydown = leDoTeclado;
+
+</script> -->
